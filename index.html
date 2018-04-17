@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/jquery.fullPage.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="shortcut icon" href="img/logo.png/" />
+		<link rel="stylesheet" href="css/jquery.funnyText.css" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/statics.js" ></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+		<script type="text/javascript" src="js/jquery.transit.js" ></script>
+		<script type="text/javascript" src="js/three.min.js"></script>
+		<script type="text/javascript" src="js/jquery.funnyText.js"></script>
+		<script type="text/javascript" src="js/textEffect.js" 	></script>
+		<!--<script type="text/javascript" src="js/lizi.js" ></script>-->
+		<!--<script type="text/javascript" src="js/3dxingkong.js" ></script>-->
+		<script type="text/javascript" src="js/my.js" ></script>
+	</head>
+	<body>
+		<section id="main">
+			<div class="nav-btn">Open Nav</div>
+			<div class="music-btn">Close Music</div>
+			<nav id="meu">
+				<ul>
+					<li><a href="#p1">首页</a></li>
+					<li><a href="#p2">基本资料</a></li>
+					<li><a href="#p3">专业技能</a></li>
+					<li><a href="#p4">个人项目</a></li>
+					<li><a href="#p5">联系方式</a></li>
+				</ul>
+			</nav>
+			</div>
+			<div class="section" id="one">
+				<div class="bj" style="display: block;">
+					<div class="table">
+						<div class="tableCell">
+							<div class="textEffect1"> 爱技术 爱生活</div>
+							<div class="textEffect2"> 欢迎来到李鑫的个人主页</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="two">
+				<div class="bj">
+					<div class="xingkong">
+						<script id="vertexShader" type="x-shader/x-vertex">
+							uniform float time;
+							varying vec3 vNormal;
+							      
+							void main(void) {
+							   vec3 v = position;
+							   vNormal = normal;
+							   v.z += cos(2.0 * position.x + (time)) * 4085.5;
+								
+							   gl_Position = projectionMatrix *
+							                modelViewMatrix *
+							                vec4(v, 1.0);
+							}
+				
+						</script>
+						<script id="fragmentShader" type="x-shader/x-fragment">
+								varying vec3 vNormal;
+								uniform float time;
+								      
+								void main(void) {
+								    vec3 light = vec3(0.1, .9, .1);
+								
+								    light = normalize(light);
+								
+								    float dProd = max(0.2, dot(vNormal, light));
+								
+								    gl_FragColor = vec4(dProd, // R
+								                      dProd, // G
+								                      dProd, // B
+								                      1.0);  // A
+								}
+						</script>
+					</div>
+					<div class="myInfo">
+						<div class="myImg"></div>
+						<div class="myInfo-text">
+							<h2 class="myInfo-title"></h2>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="three">
+				<div class="bj bj2">
+					<div id="large-header" class="large-header">
+						<canvas id="demo-canvas"></canvas>
+					</div>
+					<div class="box">
+						<div class="info">
+							<div class="info1">
+								<div class="info1-left"><span><img src="img/icon-pc.png"/></span></div>
+								<div class="text2">
+									<h4>前端</h4>
+									<p>两年的前端开发经验,熟练使用h5,css以及原生js，当然对于bootstrap,jQuery,vue,webpack等一系列的前段框架也是必备的要求,熟悉使用h5新属性,jsEs6新属性。</p>
+								</div>
+							</div>
+							<div class="info1">
+								<div class="info1-left"><span><img src="img/icon-phone.png"/></span></div>
+								<div class="text2">
+									<h4>后台</h4>
+									<p>熟练与nodejs的使用,清楚了解web服务器及http,实现过基于nodejs的rest风格的服务器。</p>
+								</div>
+							</div>
+							<div class="info1">
+								<div class="info1-left"><span><img src="img/icon-other.png"/></span></div>
+								<div class="text2">
+									<h4>数据交互</h4>
+									<p>ajax,fetch都不在话下。</p>
+								</div>
+							</div>
+						</div>
+						<div class="zsImg">
+							<img src="img/zs.png"/>
+						</div>
+						<div class="big-img">
+							<img src="img/big-img.png"/>
+						</div>
+						<div class="sm-img">
+							<img src="img/sm-img.png"/>
+						</div>
+						<div class="skills">
+							<span class="skill-1">HTML5</span>
+							<span class="skill-2">CSS3</span>
+							<span class="skill-3">javaScript</span>
+							<span class="skill-4">jQuery</span>
+							<span class="skill-5">AJAX</span>
+							<span class="skill-6">Photoshop</span>
+							<span class="skill-7">mysql</span>
+							<span class="skill-8">vue</span>
+							<span class="skill-9">node</span>
+							<span class="skill-10">express</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="four">
+				<div class=""></div>
+				<div class="bj">
+					<div style="position: absolute;width: 100%;height: 100%;top: 0;left:0;overflow: hidden;">
+						<div id="WebGL-output"></div>
+					</div>
+					<div class="works">
+						<ul>
+							<li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="https://296267150.github.io/taihua/" target="_blank">太化</a>
+								</div>
+							</li>
+							<li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="https://296267150.github.io/jiadehui/index" target="_blank">佳德汇</a>
+								</div>
+							</li>
+							<li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="http://lixinkaoshi.duapp.com/admin" target="_blank">考试系统</a>
+								</div>
+							</li>
+							<li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="https://296267150.github.io/taihua/" target="_blank">太化</a>
+								</div>
+							</li>
+							<li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="https://296267150.github.io/jiadehui/index" target="_blank">佳德汇</a>
+								</div>
+							</li>
+							<li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="http://lixinkaoshi.duapp.com/admin" target="_blank">考试系统</a>
+								</div>
+							</li><li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="https://296267150.github.io/taihua/" target="_blank">太化</a>
+								</div>
+							</li>
+							<li>
+								<div class="works-zhezhao"></div>
+								<div class="text4">
+									<a href="https://296267150.github.io/jiadehui/index" target="_blank">佳德汇</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="five">
+				<div class="bj bj5">
+					<div class="container">
+						<div class="contact-head">
+							<h1 style="margin-bottom: 10px;letter-spacing: 1px;">联系我</h1>
+							<p>人生最大的敌人是自己 人生最大的失败是自大 人生最大的愚蠢是欺骗</p>
+						</div>
+						<div class="row">
+							<div class="col1">
+								<div class="contact-left">
+									<form action="" method="post">
+										<input type="text" placeholder="请写下你的名字" class="input" name="name"/>
+										<input type="text" placeholder="请写下的Email" class="input" name="email"/>
+										<textarea rows="6" class="input" placeholder="消息"></textarea>
+										<input type="button" value="提交" class="contact-submit" style="outline: none;"/>
+									</form>
+								</div>
+							</div>
+							<div class="col2">
+								<div class="xinxi">
+									<div class="xinxi1">
+										<i class="iconfont" style="width: 70px;">&#xe9ff;</i>
+										<p>太原市晋源区新晋祠路万国汽贸对面梧桐苑小区</p>
+									</div>
+									<div class="xinxi1">
+										<i class="iconfont">&#xe6be;</i>
+										<p>13220289350<br>17535121736</p>
+									</div>
+									<div class="xinxi1">
+										<i class="iconfont">&#xe615;</i>
+										<p>2939355301@qq.com<br>2969534198@qq.com</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer">
+							<div class="footer1">
+								<p>版权©潘将兵保留所有权利.</p>
+								<ul class="footer-right">
+									<li>
+										<a href=""><i class="iconfont">&#xe601;</i></a>
+									</li>
+									<li>
+										<a href=""><i class="iconfont">&#xe63b;</i></a>
+									</li>
+									<li>
+										<a href=""><i class="iconfont">&#xe679;</i></a>
+									</li>
+									<li>
+										<a href=""><i class="iconfont">&#xe616;</i></a>
+									</li>
+									<li>
+										<a href=""><i class="iconfont">&#xe68f;</i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<audio id="dazi" src="img/102.mp3"></audio>
+		<audio loop="-1" autoplay="autoplay" id="music" src="img/1.mp3"></audio>
+	</body>
+    <script type="text/javascript" src="js/dat.gui.min.js" ></script>
+  	<script type="text/javascript" src="js/stats.min.js" ></script>
+  	<script src="js/TweenLite.min.js"></script>
+	<script src="js/EasePack.min.js"></script>
+	<script src="js/rAF.js"></script>
+	<script src="js/demo-1.js"></script>
+</html>
